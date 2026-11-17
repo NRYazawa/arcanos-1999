@@ -455,63 +455,59 @@ details summary{cursor:pointer;color:var(--brass);margin-top:8px;font-family:var
   .mao-board{min-height:90px} .menu .btn{font-size:17px}
 }
 
-/* VISUAL E PADRONIZACAO */
+/* VISUAL E PADRONIZACAO (Sem cara de TCG, Standees 2.5D) */
 .card {
   width: 140px; height: auto; min-height: 160px;
-  background: linear-gradient(145deg, #1f1f2a, #121218);
-  border-radius: 8px; border: 1px solid var(--line2);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  background: linear-gradient(145deg, #1f1f2a, #121218) !important;
+  border-radius: 8px !important; border: 1px solid var(--line2) !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
   animation: none !important; transform: none !important;
 }
-.card::before { display: none; }
-.card.t-apice { border-color: var(--brass); box-shadow: 0 0 10px rgba(201,162,74,0.3); }
-.hslot { transform: none !important; margin-right: 8px; }
+.card::before, .card .shine { display: none !important; }
+.card.t-apice { border-color: var(--brass) !important; box-shadow: 0 0 10px rgba(201,162,74,0.3) !important; }
+.hslot { transform: none !important; margin-right: 8px !important; }
 .hslot:hover { transform: translateY(-5px) !important; }
 .hand, .mao-bottom .hand { align-items: stretch; padding: 10px; overflow-x: auto; gap: 8px; display: flex; }
 
 /* 2.5D BOARD */
 .felt {
-  transform: perspective(1200px) rotateX(40deg) rotateZ(0deg);
+  transform: perspective(1200px) rotateX(30deg) rotateZ(0deg) !important;
   transform-style: preserve-3d;
   transition: transform 0.5s;
-  box-shadow: 0 50px 80px rgba(0,0,0,0.9);
-  padding: 40px;
+  box-shadow: 0 50px 80px rgba(0,0,0,0.9) !important;
+  padding: 40px !important;
   background-image: 
     linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-  background-size: 80px 80px; /* Grid size */
-  background-color: #0c0a0e;
-  border: 4px solid var(--brass);
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px) !important;
+  background-size: 80px 80px !important;
+  background-color: #0c0a0e !important;
+  border: 4px solid var(--brass) !important;
 }
-.felt:hover {
-  transform: perspective(1200px) rotateX(20deg) rotateZ(0deg);
-}
-.enemies, .allies {
-  display: block; position: relative; min-height: 160px; overflow: visible;
-}
+.felt:hover { transform: perspective(1200px) rotateX(15deg) rotateZ(0deg) !important; }
+.enemies, .allies { display: block; position: relative; min-height: 160px; overflow: visible; }
 .ecard, .acard {
-  transform: rotateX(-40deg) translateY(-20px);
+  transform: rotateX(-30deg) translateY(-10px) !important;
   transform-origin: bottom center;
-  box-shadow: 0 20px 30px rgba(0,0,0,0.8);
-  border-radius: 6px;
-  background: linear-gradient(180deg, #2a2a35, #111);
-  border: 1px solid var(--line2);
-  clip-path: none;
-  width: 130px;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.8) !important;
+  border-radius: 6px !important;
+  background: linear-gradient(180deg, #2a2a35, #111) !important;
+  border: 1px solid var(--line2) !important;
+  clip-path: none !important;
+  width: 130px !important;
   display: inline-block;
   margin: 10px;
   vertical-align: bottom;
 }
-.ecard::before, .ecard::after { display: none; }
-.acard.turn, .ecard.turn { border-color: var(--ok); box-shadow: 0 0 20px rgba(139,224,164,0.5); }
-.ecard.boss { background: linear-gradient(180deg, #421, #111); border-color: var(--brass); }
+.ecard::before, .ecard::after { display: none !important; }
+.acard.turn, .ecard.turn { border-color: var(--ok) !important; box-shadow: 0 0 20px rgba(139,224,164,0.5) !important; }
+.ecard.boss { background: linear-gradient(180deg, #421, #111) !important; border-color: var(--brass) !important; }
 
 /* TELEGRAPHS */
 .tele {
   position: absolute; top: 10px; right: 10px; z-index: 50;
   background: rgba(214, 40, 57, 0.9); border-left: 4px solid #fff;
   padding: 8px 12px; font-size: 13px; max-width: 250px;
-  animation: none; box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  animation: none !important; box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 /* DICE OVERLAY */
@@ -522,20 +518,19 @@ details summary{cursor:pointer;color:var(--brass);margin-top:8px;font-family:var
   flex-direction: column;
 }
 #dice-cube {
-  font-family: var(--stencil); font-size: 80px; color: var(--brass);
-  text-shadow: 0 0 20px var(--brass);
+  font-family: var(--stencil); font-size: 120px; color: var(--brass);
+  text-shadow: 0 0 40px var(--brass), 2px 2px 0 #000;
   cursor: grab; user-select: none;
   transition: transform 0.1s;
 }
 #dice-cube:active { cursor: grabbing; transform: scale(0.9); }
 #dice-result-ui { display: none; text-align: center; margin-top: 20px; animation: popin 0.5s; }
-#dice-result-ui b { font-size: 60px; color: #fff; text-shadow: 0 0 20px var(--brass); display: block; }
-#dice-result-ui span { color: var(--muted); font-size: 18px; }
+#dice-result-ui b { font-size: 80px; color: #fff; text-shadow: 0 0 30px var(--brass); display: block; line-height:1; }
+#dice-result-ui span { color: var(--muted); font-size: 24px; font-family:var(--ui); }
 
-/* TUTORIAL & ACTIONS */
-.tut-btn { position: absolute; right: 10px; top: 10px; }
-.ap-tracker { display: flex; gap: 10px; margin: 10px 0; justify-content: center; font-family: var(--ui); font-size: 16px; font-weight: bold; }
-.ap-dot { width: 14px; height: 14px; border-radius: 50%; background: #333; display: inline-block; box-shadow: inset 0 0 4px #000; }
+/* TUTORIAL E ACOES */
+.ap-tracker { display: flex; gap: 15px; margin: 10px 0; justify-content: center; font-family: var(--ui); font-size: 16px; font-weight: bold; }
+.ap-dot { width: 16px; height: 16px; border-radius: 50%; background: #333; display: inline-block; box-shadow: inset 0 0 4px #000; margin-right:6px; vertical-align:middle; }
 .ap-dot.ativa.on { background: var(--blood); box-shadow: 0 0 10px var(--blood); }
 .ap-dot.pacif.on { background: var(--ghost); box-shadow: 0 0 10px var(--ghost); }
 
@@ -1682,7 +1677,6 @@ function rollFx(f) {
 
 // --- DADOS ESTILO BG3 ---
 let isRolling = false;
-let dragStartY = 0;
 
 window.showDiceRoll = function(label, expr, bonus, isD20, adv, callback) {
   const ov = document.getElementById('dice-overlay');
@@ -1692,13 +1686,15 @@ window.showDiceRoll = function(label, expr, bonus, isD20, adv, callback) {
   resUI.style.display = 'none';
   cube.innerText = isD20 ? '20' : '?';
   cube.style.transform = 'translateY(0px) rotate(0deg)';
+  cube.style.color = 'var(--brass)';
   
   let tossed = false;
   
-  cube.onmousedown = e => { dragStartY = e.clientY; isRolling = true; };
-  cube.ontouchstart = e => { dragStartY = e.touches[0].clientY; isRolling = true; };
+  cube.onmousedown = e => { isRolling = true; };
+  cube.ontouchstart = e => { isRolling = true; };
   
   const finishToss = () => {
+    if(!isRolling && !tossed && event && event.type === 'dblclick') isRolling = true;
     if(!isRolling || tossed) return;
     tossed = true; isRolling = false;
     
@@ -1711,7 +1707,7 @@ window.showDiceRoll = function(label, expr, bonus, isD20, adv, callback) {
         
         let resText, tot;
         if(isD20) {
-            const r = window.d20(adv || 0);
+            const r = d20(adv || 0);
             tot = r.v + (bonus || 0);
             resText = `d20[${r.rolls.join(',')}] ${bonus >= 0 ? '+' : ''}${bonus}`;
             cube.innerText = r.v;
@@ -1719,7 +1715,7 @@ window.showDiceRoll = function(label, expr, bonus, isD20, adv, callback) {
             else if(r.v === 1) cube.style.color = 'var(--blood)';
             else cube.style.color = '#fff';
         } else {
-            const r = window.rollExpr(expr);
+            const r = rollExpr(expr);
             tot = r.total;
             resText = r.txt;
             cube.innerText = tot;
@@ -1733,41 +1729,42 @@ window.showDiceRoll = function(label, expr, bonus, isD20, adv, callback) {
         // MARINAR O RESULTADO! (3 segundos)
         setTimeout(() => {
             ov.style.display = 'none';
-            callback(); // Prossegue com a ação mecanicamente
+            callback();
         }, 3000);
     }, 1000);
   };
   
   window.onmouseup = () => finishToss();
   window.ontouchend = () => finishToss();
-  
-  // Opção automática (clique duplo)
-  cube.ondblclick = () => finishToss();
+  cube.ondblclick = () => { isRolling = true; finishToss(); };
 };
 
-// --- INTERCEPTAR ROLAGENS (dispatch override) ---
+// --- INTERCEPTAR ROLAGENS E AÇÕES (dispatch override) ---
 const origDispatch = window.dispatch;
 window.dispatch = function(a) {
     if (a.type === 'roll' && (a.d20 || a.expr)) {
         window.showDiceRoll(a.label, a.expr, a.bonus, !!a.d20, a.adv, () => {
-            origDispatch(a); // Send to backend after animation
+            origDispatch(a);
         });
         return;
     }
     
-    if (a.type === 'useCard' || a.type === 'eat' || a.type === 'folego') {
+    if (a.type === 'useCard' || a.type === 'eat' || (a.type === 'adjust' && a.field === 'folego')) {
         const pid = a.pid || STORE.myPid;
         const ch = STORE.G.players[pid]?.char;
-        if (ch) {
-            // Deduct actions locally before sending
-            const isPacif = (a.type === 'eat' || a.type === 'folego' || (a.key && a.key.startsWith('i_')));
+        if (ch && STORE.G.combat.active && isTurn('p', pid)) {
+            let isPacif = a.type === 'eat' || (a.type === 'adjust' && a.field === 'folego');
+            if (a.type === 'useCard') {
+                const card = cartasDe(ch).find(c => c.key === a.key);
+                if (card && (card.tipo === 'item' || card.cura || card.barreira)) isPacif = true;
+                if (card && card.arma === 'recarga') isPacif = true;
+            }
             if(isPacif) ch.ap_pacif = Math.max(0, (ch.ap_pacif||1) - 1);
             else ch.ap_ativa = Math.max(0, (ch.ap_ativa||1) - 1);
             
-            // if both 0, schedule auto-end
             if(ch.ap_pacif === 0 && ch.ap_ativa === 0) {
                 setTimeout(() => {
-                    if(STORE.G.combat.active) origDispatch({ type: 'endTurn' });
+                    if(STORE.G.combat.active && isTurn('p', pid)) origDispatch({ type: 'endTurn' });
                 }, 2000);
             }
         }
@@ -1776,7 +1773,7 @@ window.dispatch = function(a) {
     origDispatch(a);
 };
 
-// --- SISTEMA DE AÇÕES E HUD ---
+// --- RESTAURAR AP NO INICIO DO TURNO ---
 const origInicioTurno = window.inicioTurno;
 window.inicioTurno = function(G, ent) {
     if(ent.kind === 'p' && G.players[ent.id]?.char) {
@@ -1786,6 +1783,7 @@ window.inicioTurno = function(G, ent) {
     origInicioTurno(G, ent);
 };
 
+// --- HUD APs E BOTOES ---
 const origP_TABS_mao = P_TABS.mao;
 P_TABS.mao = () => {
     let html = origP_TABS_mao();
@@ -1794,12 +1792,12 @@ P_TABS.mao = () => {
         const ativa = ch.ap_ativa !== undefined ? ch.ap_ativa : 1;
         const pacif = ch.ap_pacif !== undefined ? ch.ap_pacif : 1;
         const apHtml = `<div class="ap-tracker">
-            <div><i class="ap-dot ativa ${ativa>0?'on':''}"></i> AÇÃO ATIVA</div>
-            <div><i class="ap-dot pacif ${pacif>0?'on':''}"></i> AÇÃO PACÍFICA</div>
+            <div style="color:var(--muted)"><i class="ap-dot ativa ${ativa>0?'on':''}"></i>AÇÃO ATIVA</div>
+            <div style="color:var(--muted)"><i class="ap-dot pacif ${pacif>0?'on':''}"></i>AÇÃO PACÍFICA</div>
         </div>`;
         html = html.replace('<div class="hud-main">', apHtml + '<div class="hud-main">');
         
-        // Disable cards if out of actions
+        // Disabled cards visual
         if(ativa <= 0) {
             html = html.replace(/class="card t-magia/g, 'class="card t-magia dis');
             html = html.replace(/class="card t-arma/g, 'class="card t-arma dis');
@@ -1813,36 +1811,67 @@ P_TABS.mao = () => {
     return html;
 };
 
-// --- TUTORIAL ---
+// --- TUTORIAL / MESTRE DAR ITEM ---
 H.showTutorial = () => {
-  STORE.ui.modal = { html: () => `
+  STORE.ui.modal = { cls: 'wide', html: () => `
     <h2 class="h-pix" style="color:var(--gold)">COMO JOGAR - MESA ONLINE</h2>
-    <p><b>1. Ações:</b> No seu turno, você tem 1 Ação Ativa (Ataques, Magias, Músicas) e 1 Ação Pacífica (Itens, Mover, Cura).</p>
-    <p><b>2. Dados (BG3 Style):</b> Quando uma ação pedir rolagem, um dado 3D aparecerá. Segure e arraste-o (ou clique duas vezes) para jogá-lo. O resultado vai "marinar" na tela para todos comemorarem!</p>
-    <p><b>3. O Tabuleiro:</b> As cartas dos inimigos e jogadores aparecem no tabuleiro 2.5D. O Mestre aprova seus ataques. Para dar itens como Mestre, vá na aba Mestre > "Dar Item/Roupa".</p>
-    <p><b>4. Fim de Turno:</b> Se você usar suas duas ações, o turno encerra sozinho. Caso queira encerrar antes, aperte o botão "FIM DO TURNO".</p>
-    <div class="row end"><button class="btn ghost" data-a="x">Fechar</button></div>
+    <p><b>1. Ações:</b> No seu turno, você tem 1 Ação Ativa (Ataques, Magias, Músicas) e 1 Ação Pacífica (Itens, Cura, Fôlego/Mover). O turno passa sozinho quando as duas acabam.</p>
+    <p><b>2. Dados (BG3 Style):</b> Quando o jogo pedir uma rolagem, o dado 3D vai aparecer na tela. Clique e arraste para cima (ou dê clique duplo) para jogar. O número fica na tela para o grupo ver.</p>
+    <p><b>3. O Tabuleiro 2.5D:</b> Na aba Mesa, o Mestre pode arrastar os Inimigos e Jogadores pela tela livremente (como miniaturas) para representar o posicionamento de combate.</p>
+    <p><b>4. Dar itens:</b> O Mestre agora tem um botão "Dar Item" na aba Jogadores para presentear alguém.</p>
+    <div class="row end">${btn('fechar', 'x', {}, 'ghost')}</div>
   ` };
   render();
 };
 
-document.querySelector('.title-screen .menu').innerHTML += `<button class="btn" data-a="showTutorial" style="margin-top:10px; background:var(--tech); color:#000"><span>?</span> TUTORIAL<small>como usar a mesa</small></button>`;
+const origM_TABS_jogadores = M_TABS.jogadores;
+M_TABS.jogadores = () => {
+    let html = origM_TABS_jogadores();
+    html = html.replace(/<div class="row">(\${btn\('ficha')/g, '<div class="row">${btn("🎁 dar item", "giveItem", {pid}, "tiny blue")}$1');
+    return html;
+};
+H.giveItem = d => {
+    const item = prompt('Nome do Item, Arma ou Comida para dar a este jogador:');
+    if(item) {
+        dispatchLocal({type: 'chat', text: `🎁 O Mestre concedeu secretamente o item [${item}] para ${STORE.G.players[d.pid].name}.`}, 'mestre');
+        alert('Item enviado (registro no chat). Para adicionar mecanicamente, o jogador pode comprar na Jukebox por 0 ✦ na próxima rodada livre (o mercado vai estar aberto).');
+    }
+};
 
-// --- TABULEIRO DRAG (Simples para Mestre) ---
-// Permits absolute positioning manipulation
-let dragEl = null;
+// --- TABULEIRO DRAG (Mestre) ---
+let dragEl = null; let dragOffset = [0,0];
 document.addEventListener('mousedown', e => {
     if(!isMestreView()) return;
     const card = e.target.closest('.ecard, .acard');
-    if(card) { dragEl = card; card.style.position = 'absolute'; card.style.zIndex = 100; }
+    if(card) { 
+        dragEl = card; 
+        const rect = card.getBoundingClientRect();
+        dragOffset = [e.clientX - rect.left, e.clientY - rect.top];
+        card.style.position = 'absolute'; 
+        card.style.zIndex = 100;
+        card.style.transform = 'rotateX(-30deg) translateY(-10px) scale(1.1)';
+    }
 });
 document.addEventListener('mousemove', e => {
-    if(dragEl) { dragEl.style.left = e.pageX + 'px'; dragEl.style.top = e.pageY + 'px'; }
+    if(dragEl) { 
+        const felt = document.querySelector('.felt').getBoundingClientRect();
+        dragEl.style.left = (e.clientX - felt.left - dragOffset[0]) + 'px'; 
+        dragEl.style.top = (e.clientY - felt.top - dragOffset[1]) + 'px'; 
+    }
 });
 document.addEventListener('mouseup', e => {
-    if(dragEl) { dragEl.style.zIndex = ''; dragEl = null; }
+    if(dragEl) { 
+        dragEl.style.zIndex = ''; 
+        dragEl.style.transform = '';
+        dragEl = null; 
+    }
 });
 
+// Adicionar botão tutorial
+setTimeout(() => {
+    const titleFoot = document.querySelector('.title-foot');
+    if(titleFoot) titleFoot.innerHTML += `<button class="btn" data-a="showTutorial" style="background:var(--ghost); color:#000; box-shadow:inset 0 0 0 1px #fff3"><span>?</span> TUTORIAL</button>`;
+}, 500);
 
 // ===================== TELAS =====================
 const VIEWS = {};
@@ -2346,9 +2375,7 @@ P_TABS.mochila = () => {
   const peso = ch.mochila.reduce((s, n) => s + (comidaBy(n)?.tipo === 'prato' ? 2 : 1), 0);
   return `<div class="mochila"><section class="panel"><h3>MOCHILA <small>${peso}/6</small></h3><div class="foods">${ch.mochila.map(n => { const f = comidaBy(n); return f ? `<div class="food f-${f.tipo}" data-a="eat" data-n="${esc(n)}"><b>${esc(n)}</b><small>${f.efeito}${f.bem && f.bem !== '—' ? '<br>BA: ' + f.bem : ''}</small><em>${f.tipo === 'prato' ? 'fora de combate' : f.tipo === 'refeicao' ? 'Ação Principal' : 'Ação Rápida'}</em></div>` : ''; }).join('') || '<p class="muted">vazia</p>'}</div>
   <details><summary>Regras de comida</summary><div class="small">${D.regrasComida}</div><div class="small">${D.brinde}</div></details></section>
-  <section class="panel"><h3>MERCADO <small>${G.jukebox ? 'ABERTO · £'+ch.libras : 'FECHADO'}</small></h3>
-  ${G.jukebox ? `<div class="market">${['bebida', 'lanche', 'refeicao', 'prato', 'alcool', 'recarga'].map(t => `<div class="mk-col"><h4>${{ bebida: 'Bebidas', lanche: 'Lanches', refeicao: 'Refeições', prato: 'Pratos completos', alcool: 'Alcoólicas', recarga: 'Recargas' }[t]}</h4>${D.comidas.filter(c => c.tipo === t).map(c => `<div class="mk-it" data-a="buyFood" data-n="${esc(c.nome)}"><span>${esc(c.nome)}</span><b>£${c.preco}</b></div>`).join('')}</div>`).join('')}</div>` : '<p class="muted">O mercado só abre quando o Mestre permitir.</p>'}
-  </section>
+  <section class="panel"><h3>MERCADO <small>${G.jukebox ? 'ABERTO · £'+ch.libras : 'FECHADO pelo Mestre'}</small></h3>${G.jukebox ? `<div class="market">${['bebida', 'lanche', 'refeicao', 'prato', 'alcool', 'recarga'].map(t => `<div class="mk-col"><h4>${{ bebida: 'Bebidas', lanche: 'Lanches', refeicao: 'Refeições', prato: 'Pratos completos', alcool: 'Alcoólicas', recarga: 'Recargas' }[t]}</h4>${D.comidas.filter(c => c.tipo === t).map(c => `<div class="mk-it" data-a="buyFood" data-n="${esc(c.nome)}"><span>${esc(c.nome)}</span><b>£${c.preco}</b></div>`).join('')}</div>`).join('')}</div>` : '<p class="muted">O mercado está fechado no momento.</p>'}</section>
   <section class="panel jukebox ${G.jukebox ? 'open' : ''}"><h3>🎰 JUKEBOX <small>${G.jukebox ? 'ABERTA' : 'fechada — o Mestre abre fora de combate'}</small> <b class="cent">✦ ${ch.centelhas}</b></h3>
    ${G.jukebox ? jukeboxView(ch, d) : '<p class="muted">Junte Centelhas derrotando inimigos. Quando a Jukebox abrir, gaste-as aqui.</p>'}</section></div>`;
 };
@@ -2539,7 +2566,7 @@ function boot() {
 boot();
 </script>
 <div id="dice-overlay">
-  <div style="color:#fff; font-family:var(--ui); font-size:24px; margin-bottom:40px;">Segure e arraste o dado para rolar</div>
+  <div style="color:#fff; font-family:var(--ui); font-size:24px; margin-bottom:40px; letter-spacing:0.1em; opacity:0.8;">SEGURE E ARRASTE O DADO PARA ROLAR (ou clique duplo)</div>
   <div id="dice-cube">20</div>
   <div id="dice-result-ui">
     <span id="d-calc">1d20+5</span>
