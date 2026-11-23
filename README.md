@@ -1,6 +1,6 @@
 # Arcanos: 1999 — Mesa Online + Livro
 
-RPG de mesa no navegador: roubo, espionagem e fim do mundo em Albion, dezembro de 1999.
+RPG de mesa no navegador: um roubo, uma prisão e uma corrida contra a meia-noite em Nova Londres, dezembro de 1999.
 
 ## Publicar no GitHub Pages
 1. Crie um repositório **público** (ex.: `arcanos-1999`).
@@ -15,6 +15,11 @@ Alternativa sem conta: arraste a pasta no Netlify Drop.
 - **Sou Jogador**: entra com o código (ou pelo link `?sala=CODIGO`).
 - **Mesa Única**: todos no mesmo aparelho, sem internet.
 
-O livro em PDF está em `livro/`. A Parte IV do livro e a aba "Campanha" da mesa são só do Mestre.
+Os PDFs estão em `livro/`: o **Livro Completo** e **Regras + One-shot (O Grande Baile)**. A Parte IV do livro e a aba "Campanha" da mesa são só do Mestre.
 
 Rede: WebRTC P2P (PeerJS). Em redes muito restritas, use a Mesa Única.
+
+## Créditos
+- Nicolas Rocha — Roteirista e Criador
+- Kinberly Yung Kim — Artista
+- Letícia Nascimento — Produção
